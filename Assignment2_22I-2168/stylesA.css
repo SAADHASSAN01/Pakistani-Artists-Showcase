@@ -1,0 +1,193 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #bc5454;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main content styles */
+.content-wrapper {
+    margin-top: 60px; /* To account for fixed header */
+    overflow: hidden; /* Clearfix */
+}
+
+main {
+    float: left;
+    width: 70%;
+    padding: 1rem;
+}
+
+.sidebar {
+    float: right;
+    width: 30%;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
+
+/* Featured artists styles */
+.featured-artists {
+    margin-bottom: 2rem;
+}
+
+.artist-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.artist-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Albums table styles */
+.albums-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.albums-table th, .albums-table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* Footer styles */
+footer {
+    clear: both;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-column {
+    float: left;
+    width: 33.33%;
+    padding: 1rem;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    main, .sidebar {
+        float: none;
+        width: 100%;
+    }
+
+    .footer-column {
+        float: none;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Transitions */
+.btn {
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffd700;
+}

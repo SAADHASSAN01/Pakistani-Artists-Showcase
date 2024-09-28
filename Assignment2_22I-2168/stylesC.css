@@ -1,0 +1,264 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Optima, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, red, black);
+    color: white;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+
+header {
+    grid-area: header;
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; 
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff5722;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #ff5722;
+}
+
+
+nav {
+    z-index: 10; 
+    position: relative; 
+}
+
+
+
+nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff5722;
+}
+
+
+main {
+    grid-area: main;
+    padding: 20px;
+}
+
+.intro {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(to right, white, white);
+    color: red;
+    padding: 50px 0;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/images/collage.jpg') center/cover no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.intro:hover::before {
+    opacity: 1;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro .btn {
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.intro .btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+
+.featured-artists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.artist-card {
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius:8px;
+    transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+}
+
+.artist-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.artists-list ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.artists-list ul li {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.artists-list ul li:hover {
+    background-color: #ff5722;
+}
+
+
+.albums-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    color: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.albums-table th, .albums-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    .featured-artists {
+        grid-template-columns: 1fr;
+    }
+
+    .artists-list ul {
+        grid-template-columns: 1fr;
+    }
+}
+a {
+    color: white;
+    text-decoration: none; 
+}
+
+
+
+a:hover {
+    color: #ff5722;
+    transition: color 0.3s ease;
+}
+
+.intro .btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

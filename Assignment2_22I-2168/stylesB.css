@@ -1,0 +1,239 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-menu li {
+    margin-left: 1rem;
+}
+
+.nav-menu li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #ffd700;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px; /* To account for fixed header */
+}
+
+.intro {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.featured-artists {
+    padding: 3rem 0;
+}
+
+.artist-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.artist-card {
+    flex: 0 1 calc(25% - 1rem);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.artist-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Albums table styles */
+.albums-table {
+    padding: 3rem 0;
+}
+
+.albums-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.albums-table th, .albums-table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 2rem 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #333;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 0.5rem 0;
+    }
+
+    .artist-card {
+        flex: 0 1 calc(50% - 1rem);
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+
+.btn {
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffd700;
+}
